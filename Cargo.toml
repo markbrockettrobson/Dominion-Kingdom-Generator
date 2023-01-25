@@ -1,0 +1,26 @@
+[package]
+name = "dominion-kingdom-generator-wasm-rust"
+version = "0.1.0"
+authors = ["MarkBrockettRobson"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = { version = "0.2.83", features = ["serde-serialize"] }
+console_error_panic_hook = { version = "0.1.7", optional = true }
+wee_alloc = { version = "0.4.5", optional = true }
+js-sys = "0.3.60"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.33"
+
+[dependencies.web-sys]
+version = "0.3.60"
+features = [
+  "console",
+]
